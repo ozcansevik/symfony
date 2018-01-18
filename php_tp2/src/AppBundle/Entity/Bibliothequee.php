@@ -131,4 +131,11 @@ class Bibliothequee
     {
         return $this->director;
     }
+
+    public function __construct( $id, $name, $director, $adresse){
+        $this->id = $id;
+        $this->name = $name;
+        $this->director = $director;
+        $this->adresse = $adresse;
+    }
 }
