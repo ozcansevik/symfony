@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+{% block title %}- Blog List{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+
+        {% for post in postList %}
+
+            <div class="mx-auto">
+                <div>
+                    <h3 class="title">{{ post.title }}</h3>
+                    <p class="ml-3">{{ post.description }}</p>
+
+                    <p class="text-muted text-right">{{ post.createdAt | date('d M Y') }}</p>
+                </div>
+            </div>
+
+            <hr>
+
+        {% endfor %}
+    </div>
+{% endblock %}

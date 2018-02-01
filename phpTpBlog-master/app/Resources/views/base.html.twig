@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Symfony Blog {% block title %}{% endblock %}</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        {% block header %}
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a class="navbar-brand" href="{{ path('homepage') }}">Symfony Blog</a>
+
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+
+                        {% block headerActive %}
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{{ path('homepage') }}">Home</a>
+                                <!-- <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> -->
+                            </li>
+                        {% endblock %}
+
+                    </ul>
+                    <div class="my-2 my-lg-0">
+                        <button class="btn btn-primary my-2 my-sm-0" type="submit">Connexion</button>
+                    </div>
+                </div>
+            </nav>
+        {% endblock %}
+
+        {% block body %}{% endblock %}
+
+        {% block javascripts %}{% endblock %}
+    </body>
+
+    {% block footer %}
+        <footer class="footer" style="background: #333; width: 100%;">
+            <div class="container" style="height: 100%">
+                <a class="text-muted mt-3 mb-3" style="display: inline-block;">BY OZ LE MAGICIEN & DETAX</a>
+            </div>
+        </footer>
+    {% endblock %}
+</html>

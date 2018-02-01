@@ -1,0 +1,8 @@
+
+phpTpBlog-master/\.idea/
+
+phpTpBlog-master/var/
+
+phpTpBlog-master/vendor/
+
+node_modules/
