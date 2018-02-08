@@ -6,10 +6,13 @@
 
         {% for post in postList %}
 
-            <div class="mx-auto">
-                <div>
-                    <h3 class="title">{{ post.title }}</h3>
-                    <p class="ml-3">{{ post.description }}</p>
+            <div class="mx-auto" >
+                <div class="card">
+                    <div class="inline-div">
+                        <div class="color-round" style="background-color: {{ post.category.couleur }}">  </div>
+                        <h3 class="title">{{ post.title }}</h3>
+                    </div>
+                    <p class="ml-3 post">{{ post.description }}</p>
 
                     <p class="text-muted text-right">{{ post.createdAt | date('d M Y') }}</p>
                 </div>
@@ -18,5 +21,8 @@
             <hr>
 
         {% endfor %}
+
+        <a class="nav-link" href="{{ path('postform') }}">Ajouter un post</a>
+
     </div>
 {% endblock %}

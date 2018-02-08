@@ -61,7 +61,7 @@ class Category
     }
 
     /**
-     * Get title
+     * Get libelle
      *
      * @return string
      */
@@ -85,7 +85,7 @@ class Category
     }
 
     /**
-     * Get description
+     * Get couleur
      *
      * @return string
      */
@@ -100,6 +100,11 @@ class Category
      * @ORM\JoinTable(name="category_posts")
      */
     private $posts;
+
+    public function getPosts()
+    {
+        return $this->posts;
+    }
 
 }
 

@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity\Blog;
 
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -161,6 +162,19 @@ class Post
      * @ORM\ManyToMany(targetEntity="Category", mappedBy="posts", cascade={"persist"})
      */
     private $category;
+
+    public function getCategory()
+    {
+        $categories = $this->category->toArray();
+        return array_shift($categories);
+    }
+
+    public function setCategory($category)
+    {
+        $this->category = $category;
+
+        return $this;
+    }
 
 }
 
