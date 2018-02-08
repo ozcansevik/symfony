@@ -31,4 +31,19 @@ class HomeController extends Controller
         $var = compact('postList');
         return $this->render('Blog/index.html.twig', $var);
     }
+
+    /**
+     * @Route("/home", name="homepageLogout")
+     */
+    public function homepageLogout(Request $request)
+    {
+        $postList = $this->postService->findAll();
+
+        $var = compact('postList');
+
+        $request->getSession()->set("connected", false);
+
+
+        return $this->render('Blog/index.html.twig', $var);
+    }
 }
