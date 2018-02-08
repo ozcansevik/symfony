@@ -159,21 +159,19 @@ class Post
 
     /**
      * Many Post have Many Category.
-     * @ORM\ManyToMany(targetEntity="Category", mappedBy="posts", cascade={"persist"})
+     * @ORM\ManyToMany(targetEntity="Category", mappedBy="posts")
+     * @ORM\JoinTable(name="category_post")
      */
-    private $category;
+    private $categories;
 
-    public function getCategory()
+    public function getCategories()
     {
-        $categories = $this->category->toArray();
-        return array_shift($categories);
+        return $this->categories;
     }
 
-    public function setCategory($category)
+    public function setCategories($categories)
     {
-        $this->category = $category;
-
-        return $this;
+        $this->categories = $categories;
     }
 
 }

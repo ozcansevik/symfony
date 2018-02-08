@@ -96,8 +96,7 @@ class Category
 
     /**
      * Many Category have Many Post.
-     * @ORM\ManyToMany(targetEntity="Post", inversedBy="category", cascade={"persist", "remove"})
-     * @ORM\JoinTable(name="category_posts")
+     * @ORM\ManyToMany(targetEntity="Post", inversedBy="categories", cascade={"remove"})
      */
     private $posts;
 
@@ -106,5 +105,13 @@ class Category
         return $this->posts;
     }
 
+
+    public function __construct() {
+        $this->posts = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    public function addPost($post){
+        $this->posts[]=$post;
+    }
 }
 

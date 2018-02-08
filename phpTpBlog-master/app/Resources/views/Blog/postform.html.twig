@@ -2,7 +2,7 @@
 {% block title %}- Blog List{% endblock %}
 
 {% block body %}
-    <div class="container mt-5">
+    <div class="container mt-5 post-form">
 
 
         {{ form_start(form) }}
@@ -10,6 +10,8 @@
 
         {{ form_row(form.title) }}
         {{ form_row(form.description) }}
+
+        {{ form_row(form.categories) }}
 
         {{ form_end(form) }}
 
