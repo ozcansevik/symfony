@@ -8,6 +8,18 @@
     margin-left: 35vw;
 }
 
+.body{
+    min-height : 70vh;
+}
+
+.add-post-button{
+    margin-left: 5%;
+}
+
+.post-div{
+    margin: 5%;
+}
+
 .post{
     text-align: justify;
 }

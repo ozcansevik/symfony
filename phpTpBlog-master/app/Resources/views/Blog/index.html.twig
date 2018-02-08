@@ -2,27 +2,32 @@
 {% block title %}- Blog List{% endblock %}
 
 {% block body %}
-    <div class="container mt-5">
+    <div class="container mt-5 body">
 
-        {% for post in postList %}
 
-            <div class="mx-auto" >
-                <div class="card">
-                    <div class="inline-div">
-                        <div class="color-round" style="background-color: {{ post.categories[0].couleur }}">  </div>
-                        <h3 class="title">{{ post.title }}</h3>
+        <a class="btn btn-primary my-2 my-sm-0 add-post-button" href="{{ path('postform') }}">Ajouter un post</a>
+
+        <div class="post-div">
+            {% for post in postList %}
+
+                <div class="mx-auto" >
+                    <div class="card">
+                        <div class="inline-div">
+                            <div class="color-round" style="background-color: {{ post.categories[0].couleur }}">  </div>
+                            <h3 class="title">{{ post.title }}</h3>
+                        </div>
+                        <p class="ml-3 post">{{ post.description }}</p>
+
+                        <p class="text-muted text-right">{{ post.createdAt | date('d M Y') }}</p>
                     </div>
-                    <p class="ml-3 post">{{ post.description }}</p>
-
-                    <p class="text-muted text-right">{{ post.createdAt | date('d M Y') }}</p>
                 </div>
-            </div>
 
-            <hr>
+                <hr>
 
-        {% endfor %}
+            {% endfor %}
 
-        <a class="nav-link" href="{{ path('postform') }}">Ajouter un post</a>
+        </div>
+
 
     </div>
 {% endblock %}
