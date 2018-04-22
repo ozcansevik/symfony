@@ -6,3 +6,6 @@ Post reader like _news.google.com_
 
 **.** To run it :
     - **php bin/console server:run**
+    
+**.** To add a post : connect with **username : oz** and **password : oz**
+    
